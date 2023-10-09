@@ -38,32 +38,11 @@
 
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">About</a>
-              </li>             
-              
-            
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-dark" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
+              </li> 
 
-    <div class="container">
-        <h2>Update Your Todo</h2>
-        <form action="/update/{{todo.sno}}" method="POST">
-            <div c class="my-3">
-              <label for="title" class="form-label">Title</label>
-              <input type="title" class="form-control" name="title" value="{{todo.title}}" id="title" aria-describedby="emailHelp">              
-            </div>
-            <div class="mb-3">
-              <label for="title" class="title">Description</label>
-              <input type="title" class="form-control" name="desc" value="{{todo.desc}}" id="title">
-            </div>
-            
-            <button type="submit" class="btn btn-outline-dark">Update</button>
-          </form>
-      
-  </body>
-</html>
+    </body>
+{% block body %}
+    
+{% endblock body %}
+
+    </html>
