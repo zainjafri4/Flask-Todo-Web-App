@@ -1,71 +1,42 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Todo App</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #3498db; /* Background color (blue) */
+            text-align: center;
+            padding: 100px;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
 
-{% block body %}
+        h1 {
+            color: #fff; /* Text color (white) */
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Crispy look */
+        }
+
+        p {
+            color: #333; /* Text color (dark gray) */
+            font-size: 24px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    {% extends 'base.html' %}
     
-     
-              
-            
-            </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-dark" type="submit">Search</button>
-            </form>
-          </div>
-        </div>
-      </nav>
-
-    <div class="container">
-        <h2>Add a Todo</h2>
-        <form action="/" method="POST">
-            <div c class="my-3">
-              <label for="title" class="form-label">Title</label>
-              <input type="title" class="form-control" name="title" id="title" aria-describedby="emailHelp">              
-            </div>
-            <div class="mb-3">
-              <label for="title" class="title">Description</label>
-              <input type="title" class="form-control" name="desc" id="title">
-            </div>            
-            <button type="submit" class="btn btn-outline-dark">Submit</button>
-          </form>
-
-          <div>
-
-                    {% if alltodo | length == 0 %}                   
-                    <div class="alert alert-dark my-3" role="alert">
-                        No Todos, Please add your first Todo!
-                      </div>
-                         {% else %}
-                         <table class="table">
-                            <thead>                                                
-                              <tr>
-                                <th scope="col">sno</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Description</th>
-                                <th scope="col">Time</th>
-                                <th scope="col">Action</th>
-                              </tr>
-                            </thead>
-                            <tbody>                
-                   
-                    
-                    {% for todo in alltodo %}
-                       <tr>
-                           <th scope="row">{{loop.index}}</th>
-                           <td>{{todo.title}}</td>
-                           <td>{{todo.desc}}</td>
-                           <td>{{todo.time}}</td>
-                           <td>
-                            <a href ="/delete/{{todo.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Delete</button>
-                            <a href ="/update/{{todo.sno}}" type="button" class="btn btn-outline-dark btn-sm mx-1">Update</button>
-                           </td>
-                        </tr>
-                        {% endfor %}
-                         </tbody>
-                         </table>
-                        {% endif %}
-                                                  
-          </div>
-    </div>
-   
-
-{% endblock body %}         
+    {% block body %}
+        <h1>Hi, This is a Simple Todo App</h1>
+        <p>Created by Zain as his first Flask Project</p>
+    {% endblock body %}
+</body>
+</html>
